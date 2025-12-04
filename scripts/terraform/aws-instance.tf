@@ -17,6 +17,7 @@ resource "aws_instance" "web" {
 resource "aws_security_group" "web_sg" {
   name        = "web-security-group"
   description = "Allow SSH and HTTP"
+  vpc_id      = aws_vpc.devops_vpc.id
 
   ingress {
     from_port   = 22
